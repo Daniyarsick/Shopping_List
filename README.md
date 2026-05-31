@@ -87,6 +87,12 @@ app/src/main/java/com/sumin/shoppinglist
 - приглушенное состояние для уже отмеченных товаров;
 - форма добавления/редактирования с outlined-полями.
 
+## Скриншоты
+
+| Основной экран | Состояние свайпа |
+| --- | --- |
+| <img src="assets/screenshots/shopping-list-main.jpg" alt="Основной экран Shopping List" width="260"> | <img src="assets/screenshots/shopping-list-swipe-issue.jpg" alt="Состояние списка при свайпе элемента" width="260"> |
+
 ## Сборка проекта
 
 Требования:
