@@ -3,6 +3,7 @@ package com.sumin.shoppinglist.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.sumin.shoppinglist.R
 import com.sumin.shoppinglist.domain.ShopItem
 
@@ -20,11 +21,17 @@ class ShopListAdapter : ListAdapter<ShopItem, ShopItemViewHolder>(ShopItemDiffCa
         val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
         val viewHolder = ShopItemViewHolder(view)
         viewHolder.view.setOnLongClickListener {
-            onShopItemLongClickListener?.invoke(getItem(viewHolder.adapterPosition))
+            val position = viewHolder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onShopItemLongClickListener?.invoke(getItem(position))
+            }
             true
         }
         viewHolder.view.setOnClickListener {
-            onShopItemClickListener?.invoke(getItem(viewHolder.adapterPosition))
+            val position = viewHolder.adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onShopItemClickListener?.invoke(getItem(position))
+            }
         }
         return viewHolder
     }
